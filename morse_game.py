@@ -39,6 +39,7 @@ def listen(word: str, morse_word: str, length=100) -> bool:
 
     if user_input == 'back':
         print_ct("=" * 40 + "\n", color='cyan')
+        stats[0] -= 1  # Decrement games played
         return False
     
     elif user_input == word:
@@ -85,13 +86,13 @@ def t_type(word: str, morse_word: str) -> bool:
         print_ct("Please try entering something.", color='magenta')
         user_input = input("Enter your answer: ").strip()
     
-    if not re.match(PATTERN, user_input):
-        print_ct("Please use only valid Morse code characters.", color='magenta')
-      
-    elif user_input == 'back':
+    if user_input == 'back':
         print_ct("=" * 40 + "\n", color='cyan')
+        stats[0] -= 1  # Decrement games played
         return False
 
+    if not re.match(PATTERN, user_input):
+        print_ct("Please use only valid Morse code characters.", color='magenta')
     
     elif user_input == morse_word:
         print_ct("Correct!", color='green', style='bold')

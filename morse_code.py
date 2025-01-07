@@ -176,7 +176,7 @@ def display_user_stats(username:str, stats) -> None:
         print_ct("\n" + "=" * 40, color='cyan')
         print_ct(f"       Welcome, {username.capitalize()}!", color='green')
         print_ct("=" * 40, color='cyan')
-        print_ct("      Current Stats:", color='yellow')
+        print_ct("       Current Stats:", color='yellow')
         print_ct(f"       Games Played: {stats[0]}", color='white')
         print_ct(f"       Games Won: {stats[1]}", color='white')
         print_ct(f"       Total Score: {stats[2]}", color='white')
@@ -185,4 +185,3 @@ def display_user_stats(username:str, stats) -> None:
         print_ct(f"       Correct Morse Words: {stats[4]}", color='white')
         print_ct(f"       Mistakes: {stats[5]}", color='white')
         print_ct("=" * 40 + "\n", color='cyan')
-    
